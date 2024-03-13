@@ -1,0 +1,57 @@
+<%@page import="day6.Book"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table {
+		width: 600px;
+		border: 1px solid black;
+		margin: 0 auto;
+		border-collapse: collapse;
+	}
+	
+	td {
+		border: 1px solid black;
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+
+
+☆★라이브러리 무조건 나온대 외우삼★☆
+☆★라이브러리 무조건 나온대 외우삼★☆
+☆★라이브러리 무조건 나온대 외우삼★☆
+☆★라이브러리 무조건 나온대 외우삼★☆
+☆★라이브러리 무조건 나온대 외우삼★☆
+
+<% 
+ArrayList<Book> list = (ArrayList<Book>)request.getAttribute("list");
+
+ %>
+
+<table>
+	<tr>
+		<td>제목</td>
+		<td>저자</td>
+		<td>가격</td>
+	</tr>
+	
+	<% 
+	for(int i = 0; i < list.size(); i++) {
+		Book book = list.get(i);
+	%>
+	<tr>
+		<td><%=book.getTitle() %></td>
+		<td><%=book.getAuthor() %></td>
+		<td><%=book.getPrice() %></td>
+	</tr>
+	<%} %>
+</table>
+</body>
+</html>

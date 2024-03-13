@@ -1,0 +1,468 @@
+@font-face {
+    font-family: '나눔스퀘어네오';
+    src: url(../fonts/NanumSquareNeo-bRg.ttf);
+}
+
+@font-face {
+    font-family: '나눔스퀘어네오라이트';
+    src: url(../fonts/NanumSquareNeo-aLt.ttf);
+}
+
+/* 기본 값에 margin과 padding에 0을 줘서 화면에 꽉 채움 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 70px;
+}
+
+/* 폰트 설정, transform: 바뀐 폰트를 자연스럽게 해줌 */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: '나눔스퀘어네오';
+    background: #f5f5f5;
+}
+
+/* 전체를 묶는 div -> relative
+.wrap {
+    position: relative;
+    width: 100%;
+} */
+
+/* 내비게이션 바의 색 변경, padding */
+.top_wrap {
+    background-color: rgb(94, 38, 38);
+    color: #f0f4f5;
+    padding: 0 12px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+/* a태그의 밑줄 삭제 + 색 변경 */
+a {
+    text-decoration: none;
+    color: #f0f4f5;
+}
+
+/* 내비게이션의 안에 요소들을 정렬 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar_logo {
+    font-size: 16pt;
+}
+
+/* list의 점 삭제, 중앙 정렬 */
+.nav_menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    line-height: 50px;
+    text-align: center;
+}
+
+/* 메인메뉴에 padding 주기 */
+.nav_list {
+    position: relative;
+    padding: 8px 30px;
+}
+
+/* 메인 메뉴에 hover 하면 색 변경 */
+.nav_list:hover {
+    background-color: rgb(146, 62, 62);
+    border-radius: 8px;
+}
+
+/* 로그인 오른쪽 위로 */
+.sub_nav {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    font-size: 13px;
+}
+
+/* 드롭다운 메뉴 설정 */
+.drop_menu {
+    font-family: '나눔스퀘어네오라이트';
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.5);
+    width: 100%;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    opacity: 0; /* 처음에는 안 보이도록 */
+    visibility: hidden; /* 처음에는 안 보이도록 */
+    transition: all 0.3s ease-in-out; /* 애니메이션 속도 조절 */
+}
+
+/* 로그인, 마이페이지의 리스트 점 삭제 */
+.member {
+    display: flex;
+    list-style: none;
+}
+
+.member li {
+    padding: 8px 4px;
+    font-size: 11px;
+}
+
+.nav_list:hover > ul {
+    opacity: 1; /* hover시 완전히 보이도록 */
+    visibility: visible; /* hover시 완전히 보이도록 */
+}
+
+.drop_menu:hover {
+    background: #5e2626;
+    transition: ease 0.5s;
+}
+
+.drop_menu > li:hover {
+    background: rgb(146, 62, 62);
+    transition: ease 1s;
+}
+
+.drop_menu li {
+    list-style: none;
+}
+
+/* container 설정 */
+
+.container li {
+    list-style: none;
+    display: inline-block;
+}
+
+.main1 {
+    display: flex;
+    justify-content: center;
+    gap: 150px; /* 사진과 글 사이의 간격을 조절합니다. */
+    padding: 0 15%; /* 양 옆 공간을 비웁니다. */
+}
+
+.main1_img {
+    padding-top: 10%;
+}
+
+.main1_img img {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.main1_text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px; /* 문단 사이의 간격을 조절합니다. */
+}
+
+.txt4 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* main2 (이미지 슬라이드) */
+.main2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 100px; /* 추가 */
+}
+
+.main2_text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.slider {
+    position: relative;
+    height: 600px;
+    width: 400px;
+    border: 3px solid #5e262625;
+    border-radius: 5px;
+}
+
+.slide {
+    position: absolute;
+    opacity: 0; /* 초기 상태를 투명하게 설정 */
+    animation: slide 16s infinite;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.slide div {
+    height: 19.5%;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #5e26260d;
+    color: black;
+}
+
+.slide_title h5,
+.slide_title p {
+    line-height: 1.5; /* 행 간의 간격을 조절 */
+}
+
+.slider .slide:nth-child(1) {
+    animation-delay: 0s;
+}
+.slider .slide:nth-child(2) {
+    animation-delay: 4s;
+}
+.slider .slide:nth-child(3) {
+    animation-delay: 8s;
+}
+.slider .slide:nth-child(4) {
+    animation-delay: 12s;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* 
+한 페이지씩 넘기는 효과를 줄 수 있게
+상단에 고정된 내비게이션과 페이지의 간격만큼 높이 설정
+*/
+.main1,
+.main2,
+.main3 {
+    height: 91.7vh;
+}
+
+.main1,
+.main2,
+.main3,
+.footer {
+    scroll-snap-align: start; /* 부드럽게 페이지를 넘기는 효과 시작 */
+}
+
+/* main2의 텍스트 폰트 설정 */
+.main2_text h1,
+.main2_text h3 {
+    text-shadow: 2px 2px 4px rgba(165, 42, 42, 0.7); /* 그림자 하이라이트 효과 */
+    color: #333; /* 변경: 텍스트 색 */
+    font-style: italic; /* 추가: 이탤릭체 */
+    font-weight: bold; /* 추가: 볼드체 */
+}
+
+.slide_title p {
+    font-size: 8pt;
+    font-weight: lighter;
+}
+
+.menu_button {
+    padding: 10px 20px;
+    margin-right: auto;
+    background-color: rgba(128, 128, 128, 0.5);
+    color: #fff;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 30px;
+}
+
+.menu_button:hover {
+    background-color: #a0522d;
+    transition: ease 0.7s;
+}
+
+/* 좌측 하단 페이지 이동 버튼 생성 */
+.chap_list_wrap {
+    position: fixed; /* 위치 고정 */
+    bottom: 20px; /* 아래쪽에 고정 */
+    left: 30px; /* 왼쪽에 고정 */
+}
+
+.chap_list_wrap ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* 리스트 아이템을 세로로 배열 */
+}
+
+.chap_list_wrap ul li a {
+    display: inline-block;
+    padding: 18px 20px;
+    background-color: rgba(128, 128, 128, 0.5);
+    color: #fff;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 20px; /* 버튼 사이에 마진 추가 */
+}
+
+.chap_list_wrap ul li a:hover {
+    background-color: #a0522d;
+    transition: ease 0.7s;
+}
+
+/* main3 : 이벤트 페이지 */
+.event_title {
+    font-size: 13px;
+    font-weight: lighter;
+    text-align: center; /* 중앙 정렬 */
+    padding: 20px 0;
+    color: #7b7b7b;
+}
+
+.event_title p {
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 1000;
+    color: black;
+    text-shadow: 4px 4px 4px rgba(165, 42, 42, 0.679); /* 하이라이트 추가 */
+}
+
+.event {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.main3 img {
+    display: block;
+    border-radius: 10px;
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+}
+
+.event1,
+.event2,
+.event3 {
+    border: 1px solid #5e262625;
+    border-radius: 10px;
+}
+
+.event1_text,
+.event2_text,
+.event3_text {
+    margin: 0;
+    padding: 35px 0;
+    box-sizing: content-box;
+    background: #5e26260d;
+    color: black;
+    font-size: 13pt;
+    text-align: center;
+}
+
+.event p {
+    font-size: 10pt;
+    text-align: left;
+    margin-left: 25px;
+}
+
+/* footer : 설명 칸 */
+.footer {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* 상단 내비게이션과 맞춰주는 바 */
+.footer_brown {
+    background: #5e2626;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.footer_black {
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+}
+
+.footer_copy {
+    display: flex;
+    flex-direction: column; /* 수직 방향으로 요소 정렬 */
+    justify-content: space-between; /* 요소들 사이의 공간 최대화 */
+}
+
+.footer_copy h3 {
+    color: white;
+    align-self: flex-start;
+    padding-top: 10%;
+}
+
+.footer_copy p {
+    align-self: flex-end;
+    padding-bottom: 10%;
+}
+
+.footer_list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 10pt;
+    padding-top: 7%;
+}
+
+.footer_list li {
+    margin: 0 10px;
+    list-style: none;
+}
+
+.footer_list li a {
+    color: #7b7b7b;
+    text-decoration: none;
+}
+
+.footer_copy {
+    font-size: 14px;
+    color: #777;
+}
+
+.footer_sub li {
+    padding: 5px 0;
+}
+
+.footer_list hr {
+    margin: 5px 0;
+}

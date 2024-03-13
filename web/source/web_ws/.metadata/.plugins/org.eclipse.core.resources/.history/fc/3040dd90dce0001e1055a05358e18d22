@@ -1,0 +1,12 @@
+package day7;
+
+import java.sql.Connection;
+
+public class AcornDAO {
+	
+	
+	public Connection dbcon() {
+		
+		return null;
+	}
+}

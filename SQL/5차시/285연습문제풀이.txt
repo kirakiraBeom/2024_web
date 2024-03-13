@@ -1,0 +1,59 @@
+--1. 
+
+drop table new_emp;
+drop table new_emp2;
+drop table new_emp3;
+
+create table new_emp (
+   no number(5) ,
+   name varchar2(20) ,
+   hiredate  date ,
+   bonus number(6,2)
+);
+
+
+ 
+create table new_emp2 
+as
+     select no, name, hiredate 
+     from new_emp;
+
+
+ 
+--3
+create table new_emp3
+ as
+    select * from new_emp2
+    where 1=2;
+
+
+--4.
+  alter table new_emp2
+  add (birthday date default sysdate );
+
+ 
+
+--5.  
+    alter table new_emp2
+    rename column birthday to birth ;
+
+
+--6. 
+   alter table   new_emp2
+   modify(no number(7) ) ;
+
+
+--7. 
+   alter table new_emp2
+   drop column birth;
+
+--8
+truncate table new_emp2 ; 
+
+--
+drop table new_emp2  ;
+
+
+desc new_emp2;
+select * from new_emp2;
+

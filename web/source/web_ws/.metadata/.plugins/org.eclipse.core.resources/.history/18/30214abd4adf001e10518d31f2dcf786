@@ -1,0 +1,115 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.Connection, java.sql.PreparedStatement, java.sql.ResultSet, java.sql.DriverManager, java.sql.SQLException" %>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>도서 목록</title>
+<style>
+header {
+    border: 1px solid black;
+    padding: 20px;
+}
+nav {
+    border: 1px solid black;
+    padding: 10px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+nav span {
+    padding-right: 5px;
+}
+section {
+    padding: 10px;
+}
+table {
+    width: 80%;
+    border: 1px solid black;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 8px;
+}
+caption {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+footer {
+    border: 1px solid black;
+    display: flex;
+    padding: 10px;
+}
+footer > div {
+    width: 33.33%;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h2>도서 목록</h2>
+</header>
+
+<nav>
+    <span><a href="#">도서 등록</a></span>
+    <span><a href="#">도서 대출</a></span>
+    <span><a href="#">도서 반납</a></span>
+</nav>
+
+<section>
+    <table>
+        <caption>도서 목록 조회</caption>
+        <tr>
+            <th>도서번호</th>
+            <th>도서명</th>
+            <th>도서분류</th>
+            <th>저자</th>
+        </tr>
+        <% 
+            try {
+                String driver = "oracle.jdbc.driver.OracleDriver";
+                String url = "jdbc:oracle:thin:@localhost:1521:testdb";
+                String user = "scott";
+                String password = "tiger";
+
+                Class.forName(driver);
+                Connection con = DriverManager.getConnection(url, user, password);
+                String sql = "SELECT * FROM book";
+                PreparedStatement pst = con.prepareStatement(sql);
+                ResultSet rs = pst.executeQuery();
+
+                while (rs.next()) {
+        %>
+        <tr>
+            <td><%= rs.getString("bno") %></td>
+            <td><%= rs.getString("bname") %></td>
+            <td><%= rs.getString("bclass") %></td>
+            <td><%= rs.getString("bauthor") %></td>
+        </tr>
+        <%
+                }
+                con.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        %>
+    </table>
+</section>
+
+<footer>
+    <div>도서관 관리 시스템</div>
+    <div>2024년 HY도서관</div>
+    <div>문의: 02-1234-5678</div>
+</footer>
+
+</body>
+</html>

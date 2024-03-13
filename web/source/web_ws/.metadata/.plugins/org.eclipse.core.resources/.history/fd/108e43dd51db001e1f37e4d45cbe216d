@@ -1,0 +1,28 @@
+package day1.prac;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class que3 extends HttpServlet {
+  @Override // service 메서드 오버라이딩
+  protected void service(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
+	  response.setContentType("text/html;charset=UTF-8");
+	  response.setCharacterEncoding("UTF-8");
+	  
+	  PrintWriter out = response.getWriter();
+	  
+	  int dan = Integer.parseInt(request.getParameter("dan"));
+    
+	  response.getWriter().println("<html><body>");
+	  response.getWriter().println("<h1>" + dan + "단</h1>");
+	  for (int i = 1; i <= 9; i++) {
+		  response.getWriter().println("<p>" + dan + " x " + i + " = " + (dan * i) + "</p>");
+	  }
+	  response.getWriter().println("</body></html>");
+  	}
+}

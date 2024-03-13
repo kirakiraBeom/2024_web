@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+.wrap{
+ width: 500px;
+ padding:20px;
+ border:1px solid black;
+ margin:0 auto;
+ margin-top:100px;
+}
+
+
+.inner-wrap{
+	border:1px solid black;
+	padding:10px;
+}
+
+a{
+ text-decoration: none;
+ color:black;
+}
+</style>
+</head>
+<body>
+
+<h2>여러가지 방법으로 요청하기 , GET 요청</h2>
+<div class="wrap">
+	<div class="inner-wrap">
+	   <a href="/day2/prac6"> 문제6: 약수구하기</a> 	   
+	   
+	</div>
+</div>
+</body>
+</html>

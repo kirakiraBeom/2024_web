@@ -1,0 +1,192 @@
+:root {
+    --text-color: #f0f4f5;
+    --background-color: #263343;
+    --accent-color: #d49466;
+}
+
+body { 
+    margin: 0;
+    font-family: "Source Sans Pro";
+}
+
+.navbar > a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #263343;
+    padding: 8px 12px;
+}
+
+.navbar_logo {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.navbar_logo i {
+    color: #d49466
+}
+
+.navbar_menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar_menu li {
+    padding: 8px 12px;
+}
+
+.navbar_menu li:hover {
+    background-color: #d49466;
+    border-radius: 4px;
+}
+
+.navbar_icons {
+    list-style: none;
+    color: var(--text-color);
+    display: flex;
+    padding-left: 0;
+}
+
+.navbar_icons li {
+    padding: 8px 12px;
+}
+
+.navbar_toogleBtn {
+    display: none;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: #d49466;
+}
+
+@media  screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 24px;
+    }
+
+    .navbar_menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar_menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar_icons {
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+    .navbar_toogleBtn {
+        display: block;
+    }
+
+    .navbar_menu.active,
+    .navbar_icons.active {
+        display: flex;
+    }
+}
+
+#container {
+    position: relative;
+    letter-spacing: -.2px;
+}
+
+.right {
+    position: relative;
+    float: right;
+    width: 350px;
+    background-color: #fff;
+}
+
+.sc_login {
+    padding: 16px 16px 12px 17px;
+    background-color: #f7f9fa;
+    border: 1px solid #dae1e6;
+}
+
+.login_msg {
+    padding-top: 2px;
+    padding-left: 3px;
+    font-size: 5px;
+    color: grey;
+}
+
+.sc_login .link_login {
+    display: block;
+    padding: 15px 0;
+    margin-top: 11px;
+    background-color: #d49466;
+    border: 1px solid #d49466de;
+    border-radius: 2px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+.sc_login .ico_beom {
+    display: inline-block;
+    height: 12px;
+    background-position: -202px -296px;
+    vertical-align: top;
+    margin: 2px 5px 0 0;
+}
+
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+.sc_login .icon_coding {
+    display: inline-block;
+    width: 60px;
+    height: 12px;
+    background-position: -202px -296px;
+    background-repeat: no-repeat;
+    vertical-align: top;
+    margin: 2px 5px 0 0;
+}
+
+.sc_login .sub_area {
+    margin: 14px 8px 0 4px;
+}
+
+.sc_login .sub_area .look_box {
+    float: left;
+}
+
+.sc_login .sub_area .look_box a {
+    color: #505050;
+    font-size: 10px;
+}
+
+.sc_login .sub_area .link_join {
+    float: right;
+    color: #505050;
+    font-size: 10px;
+}
+
+.sc_login .sub_area::after {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    clear: both;
+}

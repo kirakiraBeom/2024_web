@@ -1,0 +1,37 @@
+
+고객정보 저장될 공간  ( 테이블)
+
+테이블
+ 
+crud   => create(insert ) , read( select ), u(update) , d(delete) 
+create table  acorntbl (
+    id  varchar2(10) primary key,
+    pw  varchar2(10) ,
+    name varchar2(10)
+);
+
+--crud   => create(insert ) , read( select ), u(update) , d(delete) 
+
+select *  from  acorntbl ;
+insert into acorntbl values('kjh', '4482', '강지훈');
+insert into acorntbl values('kgy','1234', '김기엽');
+insert into acorntbl  values('sj' ,'0000' , '김수진');
+insert into acorntbl  values('ys','6666','김연수');
+insert into acorntbl values('yw', '1127', '김예원');
+insert into acorntbl values('jb', '0317', '김종범');
+insert into acorntbl values('bj','9876','박범준');
+insert into acorntbl values('wd', '1111', '서원덕'); 
+insert into acorntbl values('hs', '4482', '양홍섭');
+insert into acorntbl values('mh','0117','여민혜'); 
+insert into acorntbl values('wj','1126','유원준');
+insert into acorntbl values('ly','0625','윤라영');
+insert into acorntbl values('sj','6789','윤성진');
+insert into acorntbl  values('gh', '1234', '이건희');
+insert into acorntbl values('mj','1234','이민재');
+insert into acorntbl values('yn', '7777', '장유나');
+insert into acorntbl values('gw', '9999', '정기원');
+insert into acorntbl values('hs', '9999', '최환석');
+insert into acorntbl values('hgi', '9999', '함현지');
+commit;
+
+

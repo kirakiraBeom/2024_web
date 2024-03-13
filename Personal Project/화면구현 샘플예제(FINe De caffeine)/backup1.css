@@ -1,0 +1,104 @@
+@font-face {
+    font-family: "나눔스퀘어네오";
+    src: url(../fonts/NanumSquareNeo-bRg.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "나눔스퀘어네오";
+    transform: rotate(0.04deg);
+}
+
+.wrap {
+    position: relative;
+    width: 100%;
+}
+
+.top_wrap {
+    background-color: rgb(94, 38, 38);
+    color: #f0f4f5;
+    padding: 8px 12px;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: #f0f4f5;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar_logo {
+    font-size: 20pt;
+}
+
+.nav_menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.nav_menu li {
+    padding: 8px 30px;
+}
+
+.nav_list:hover {
+    background-color: rgb(146, 62, 62);
+    border-radius: 8px;
+}
+
+.sub_nav {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    font-size: 13px;
+}
+
+.drop_menu {
+    display: none;
+    margin-top: 35px;
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+.member {
+    display: flex;
+    list-style: none;
+}
+
+.member li {
+    padding: 8px 4px;
+    font-size: 11px;
+}
+
+.nav_menu:hover > .drop_menu {
+    display: flex;
+}
+
+.drop_list:hover {
+    background: rgb(94, 38, 38);
+    transition: ease 0.5s;
+}
+
+.drop_list > li:hover {
+    background: rgb(146, 62, 62);
+    transition: ease 1s;
+}
+
+.drop_list > li {
+    list-style: none;
+}

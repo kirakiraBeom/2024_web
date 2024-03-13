@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .wrap{
+            width:400px;
+            border:1px solid black;   
+            padding:10px;
+        }
+        .img_wrap{
+            width:200px;
+            height:200px;
+            /* background-color: blue; */
+            background-image: url(imgs/ak-47.jpg);
+            background-position: center;
+            background-size: cover;
+            margin: 0 auto;
+        }
+        .info_wrap{
+            width:300px;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        .info_wrap input {
+            width: 97%;
+            height: 30px;
+        }
+
+        .info_wrap button {
+            width: 100%;
+            height: 40px;
+            margin-top: 15px;
+            border: none;
+        }
+    </style>
+
+    <script>
+        function check() {
+            alert("ㅎㅇ");
+
+            let frm = document.frm;
+            let id = frm.id.value;
+
+            if( id == "") {
+                alert("아이디를 입력하세요");
+                frm.id.focus();
+            }
+            else {
+                frm.submit();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- 이미지 영역 -->
+        <div class="img_wrap">이미지</div>
+        
+        <!-- 로그인정보영역 -->
+        <form action="loginAction.jsp" method="get" name="frm">
+            <div class="info_wrap">
+                <input type="text" placeholder="id">
+                <input type="text" placeholder="pw">
+                <button onclick="check()">로그인</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+.container {
+    border: 1px solid black;
+    width: 500px;
+    padding: 30px;
+    margin: 250px auto;
+}
+
+.today {
+    border: 1px solid #dcdcdcff;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #dcdcdcff;
+}
+
+#text1 {
+    width: 455px;
+    padding: 20px;
+}
+
+#button1 {
+    position: absolute;
+    right: 433.5px;
+    width: 100px;
+    padding: 18.6px;
+}

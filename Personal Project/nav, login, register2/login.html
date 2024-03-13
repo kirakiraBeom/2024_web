@@ -1,0 +1,58 @@
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="login.css">
+      <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+      <title>Beom's Login</title>
+      <script src = "./login.js"></script>
+   </head>
+   <body>
+      <div id = "wrap" class = "wrap">
+         <header class = "header">
+            <div class = "header_inner">
+               <a href="index.html" class = "logo">
+                  <h1>Beom's Coding</h1>
+               </a>
+            </div>
+         </header>
+         <container id = "container" class = "container">
+            <div class = "content">
+               <div class = "login_wrap">
+                  <form action = "login.php" method = "POST">
+                     <ul class = "panel_wrap">
+                        <li class = "panel_item" style = "display: block;">
+                           <div class = "panel_inner">
+                              <div class = "id_pw_wrap">
+                                 <div class ="input_row" id = "id_line">
+                                    <div class = "icon_cell" id ="id_cell">
+                                       <span class = "icon_id"></span>
+                                    </div>
+                                    <input type = "text" id = "id" name = "id" class = "input_text" maxlength="41" placeholder="아이디">
+                                 </div>
+                                 <div class = "input_row" id = "pw_line">
+                                    <div class = "icon_cell" id = "pw_cell">
+                                       <span class = "icon_pw"></span>
+                                    </div>
+                                    <input type = "password" id = "pwd" name = "pwd" class = "input_text" maxlength="16" placeholder="비밀번호">
+                                 </div>
+                              </div>
+                              <div class ="btn_login_wrap">
+                                 <button type = "submit" class = "btn_login" id = "log.login">
+                                    <span class = "btn_text">로그인</span>
+                                 </button>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                  </form>
+               </div>
+               <ul class = "find_wrap" id = "find_wrap">
+                  <li><a target = "_blank" href = "" class = "find_text">아이디 찾기</a></li>
+                  <li><a target = "_blank" href = "" class = "find_text">비밀번호 찾기</a></li>
+                  <li><a target = "_blank" href = "member.html" class = "find_text">회원가입</a></li>
+               </ul>
+            </div>
+         </container>
+      </div>
+   </body>
+</html>

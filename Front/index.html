@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To Do List !</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="main.js"></script>
+        <!-- 아이콘 가져오기 -->
+        <script src="https://kit.fontawesome.com/353e3b9f74.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="today">
+                <h1>오늘은 😊</h1>
+                <h3 style="font-weight: normal">
+                    <p>날짜: <span id="date"></span> <span id="time"></span></p>
+                </h3>
+            </div>
+            <div class="new">
+                <h3>새로운 todo 작성하기 <i class="fa-solid fa-check"></i></h3>
+                <input type="text" id="text1" value="일정추가" /><input type="button" id="button1" value="등록" />
+            </div>
+            <div class="list">
+                <h3>Todo List</h3>
+                <input type="text" id="text2" value="검색어를 입력하세요" />
+            </div>
+            <hr />
+            <div class="bottom">
+                <input type="checkbox" name="" id="" />
+                <input type="button" value="삭제하기" />
+            </div>
+        </div>
+    </body>
+</html>

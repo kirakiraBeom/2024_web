@@ -1,0 +1,103 @@
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="member.css">
+      <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+      <title>Beom's Member</title>
+   </head>
+   <body>
+      <div id = "header" class ="join_member">
+            <a href = "index.html" class = "h_logo">
+               <h1>Beom's Coding</h1>
+            </a>
+      </div>
+      <form id = "join_form" method = "post" action = "memberinput.php">
+         <div id = "container" class = "container">
+            <div id = "content">
+               <div class = "join_content">
+                  <div class = "row_group">
+                     <div class = "join_row">
+                        <h3 class = "join_title">
+                           <label for = "id">아이디</label>
+                        </h3>
+                        <span class = "ps_box int_id">
+                           <input type = "text" id = "id" name = "id" class = "int" maxlength="20">
+                           <span class = "step_url">@chungwoon.ac.kr</span>
+                        </span>
+                     </div>
+                     <div class = "join_row">
+                        <h3 class = "join_title">
+                           <label for = "pwd1">비밀번호</label>
+                        </h3>
+                        <span class = "ps_box int_pass">
+                           <input type = "password" id = "pwd1" name = "pwd1" class = "int" maxlength="20">
+                           <span class = "lb1">
+                              <span id = "pwd1span" class = "step_txt"></span>
+                           </span>
+                        </span>
+                        <h3 class = "join_title">
+                           <label for = "pwd2">비밀번호 재확인</label>
+                        </h3>
+                        <span class = "ps_box int_pass_check">
+                           <input type = "password" id = "pwd2" name = "pwd2" class = "int" maxlength="20">
+                        </span>
+                     </div>
+                  </div>
+                  <div class = "row_group">
+                     <div class = "join_row">
+                        <h3 class = "join_title">
+                           <label for = "name">이름</label>
+                        </h3>
+                        <span class = "ps_box box_right_space">
+                           <input type = "text" id = "name" name = "name" class = "int" maxlength = "40">
+                        </span>
+                     </div>
+                     <div class = "join_row join_birthday">
+                        <h3 class = "join_title">
+                           <label for = "yy">생년월일</label>
+                        </h3>
+                        <div class = "bir_wrap" id = "date" name = "date">
+                           <div class = "bir_yy">
+                              <span class = "ps_box">
+                                 <input type = "text" id = "yy" name = "yy" class = "int" maxlength = "4">
+                              </span>
+                           </div>
+                           <div class = "bir_mm">
+                              <span class = "ps_box">
+                                 <select id = "mm" name = "mm" class = "sel">
+                                    <option value>월</option>
+                                    <option value = "01">01</option>
+                                    <option value = "02">02</option>
+                                    <option value = "03">03</option>
+                                    <option value = "04">04</option>
+                                    <option value = "05">05</option>
+                                    <option value = "06">06</option>
+                                    <option value = "07">07</option>
+                                    <option value = "08">08</option>
+                                    <option value = "09">09</option>
+                                    <option value = "10">10</option>
+                                    <option value = "11">11</option>
+                                    <option value = "12">12</option>
+                                 </select>
+                              </span>
+                           </div>
+                           <div class = "bir_dd">
+                              <span class = "ps_box">
+                                 <input type = "text" id = "dd" name = "dd" class = "int" maxlength = "2">
+                                 <label for = "dd" class = "lb1"></label>
+                              </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class = "btn_area">
+                  <button type = "submit" id = "btnJoin" class = "btn_type btn_primary">
+                     <span>회원가입</span>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </form>
+   </body>
+</html>

@@ -1,0 +1,49 @@
+create table book(
+    bno number(4) primary key,
+    bname varchar(60) not null,
+    bclass number(3) not null,
+    bauthor varchar(30)
+    );
+    
+    create table bmember(
+    mNumber number(4) primary key,
+    mName varchar(20),
+    phoneNumber varchar(13),
+    BorrowedBook varchar(60)
+);
+    
+    create table CheckOut(
+    bNumber number(4),
+    mNumber number(4),
+    cDate date
+);
+    
+select * from book;
+drop table book;
+drop table checkout;
+select * from bmember;
+select * from Checkout;
+
+insert into book values(0001,'에디토리얼씽킹',600,'최혜진');
+insert into book values(0002,'최소한의한국사',800,'최태성');
+insert into book values(0003,'물고기는존재하지않는다',400,'룰루밀러');
+insert into book values(0004,'우리는미국을모른다',300,'김동현');
+insert into book values(0005,'김재우의영어회화100',700,'김재우');
+    
+insert into bmember values(0001,'서원덕','010-5057-0722','에디토리얼씽킹');
+insert into bmember values(0002,'박범준','010-2141-1241','최소한의한국사');
+insert into bmember values(0003,'여민혜','010-7842-9412','김재우의영어회화100');
+insert into bmember values(0004,'홍길동','010-7411-8522','우리는미국을모른다');
+
+insert into CheckOut values(0001,0001,'2024-02-28');
+insert into CheckOut values(0002,0002,'2023-07-21');
+insert into CheckOut values(0005,0003,'2021-08-09');
+insert into CheckOut values(0004,0004,'2012-01-02');
+
+
+select *
+from(select * from book b join bmember m on b.bname = m.BorrowedBook) bm
+join checkout c
+on bm.bno = c.bnumber;
+
+commit;

@@ -1,0 +1,73 @@
+package day1.prac;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/musicManagement")
+public class MyMusic extends HttpServlet {
+	
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 요청과 응답의 인코딩 설정
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
+		
+		// 클라이언트에게 응답할 PrintWriter 객체 생성
+		PrintWriter out = response.getWriter();
+		
+		// HTML 문서 작성 시작
+		out.println("<!DOCTYPE html>");
+		out.println("<html>");
+		out.println("<head>");
+		out.println("<meta charset=\"UTF-8\">");
+		out.println("<title>음악 스트리밍 프로그램</title>");
+		
+		// Google Fonts에서 Nunito 폰트를 불러옵니다.
+		out.println("<link href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap\" rel=\"stylesheet\">");
+
+		// 스타일 요소 추가
+		out.println("<style>");
+		out.println("body { background-color: #121212; color: #FFFFFF; font-family: 'Arial', sans-serif; }");
+		out.println("h2 { color: #1DB954; font-size: 2.5em; }");
+		out.println("h3 { color: #FFFFFF; font-size: 1.5em; }");
+		out.println("ul { list-style-type: none; padding: 0; }");
+		out.println("li { margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }");
+		out.println(".song { font-weight: bold; color: #FFFFFF; font-size: 1.2em; }");
+		out.println(".artist { color: #BBBBBB; }");
+		out.println(".genre { color: #888888; }");
+		out.println("</style>");
+
+		out.println("</head>");
+		out.println("<body>");
+		out.println("<h2>Music Stremming Service</h2>");
+
+		// 음악 목록 조회 및 출력
+		out.println("<h3>CHART</h3>");
+		out.println("<ul>");
+		out.println("<li>");
+		out.println("<span class=\"song\">Blueming</span><br>");
+		out.println("<span class=\"artist\">IU</span><br>");
+		out.println("<span class=\"genre\">장르: POP</span>");
+		out.println("</li>");
+		out.println("<li>");
+		out.println("<span class=\"song\">How You Like That</span><br>");
+		out.println("<span class=\"artist\">BLACKPINK</span><br>");
+		out.println("<span class=\"genre\">장르: HIPHOP</span>");
+		out.println("</li>");
+		out.println("<li>");
+		out.println("<span class=\"song\">Dynamite</span><br>");
+		out.println("<span class=\"artist\">BTS</span><br>");
+		out.println("<span class=\"genre\">장르: POP</span>");
+		out.println("</li>");
+		out.println("</ul>");
+
+		out.println("</body>");
+		out.println("</html>");
+	}
+}

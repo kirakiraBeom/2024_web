@@ -1,0 +1,91 @@
+<html>
+
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         background-color: #f2f2f2;
+         text-align: center;
+      }
+   
+      /* Style for header */
+      h1 {
+         text-align: center;
+         color: #333;
+      }
+   
+      /* Style for form */
+      form {
+         margin: 0 auto;
+         width: 30%;
+         background-color: #fff;
+         padding: 20px;
+         border-radius: 5px;
+         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+         margin-bottom: 10px;
+      }
+   
+      /* Style for labels */
+      label {
+         display: block;
+         margin-bottom: 5px;
+         color: #212121;
+      }
+   
+      /* Style for inputs */
+      input[type="text"],
+      textarea {
+         width: 100%;
+         padding: 10px;
+         border-radius: 5px;
+         border: none;
+         margin-bottom: 20px;
+         box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5);
+      }
+   
+      /* Style for submit button */
+      input[type="submit"] {
+         background-color: #00758F;
+         color: #fff;
+         margin-top: 10px;
+         padding: 10px 20px;
+         border-radius: 5px;
+         border: none;
+         cursor: pointer;
+      }
+   
+      /* Style for error messages */
+      .error {
+         color: red;
+         font-style: italic;
+         margin-top: 10px;
+      }
+
+      a {
+         text-decoration: none;
+         color: #00758F;
+         font-weight: bold;
+         font-size: 20px;
+      }
+   </style>
+</head>
+
+<body>
+   <h1>단어 등록</h1>
+   <form action="word_table.php" method="post">
+      <div>
+         <label>아이디</label><input type="text" name="id"><br>
+         <label>한국어</label><input type="text" name="kl"> <br>
+         <label>중국어</label><input type="text" name="cl"> <br>
+         <label>영어</label><input type="text" name="el"> <br>
+         <label>러시아어</label><input type="text" name="rl"> <br>
+         <label>날짜</label><input type="date" name="date"> <br>
+      </div>
+      <input type="submit" value="등록하기">
+
+   </form>
+   <a href="index.html">메인 페이지로</a>
+</body>
+
+</html>

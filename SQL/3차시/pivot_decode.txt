@@ -1,0 +1,24 @@
+select  order_item, 
+count( decode( reg_name, '릴리' ,1)  )  릴리,
+count( decode( reg_name, '봄' ,1)  ) 봄,
+count( decode( reg_name, '테스' ,1)  ) 테스,
+count( decode( reg_name, '무드' ,1)  ) 무드,
+count( decode( reg_name, '마샤' ,1)  ) 마샤
+from STARBUCKS_ORDER
+group by  order_item
+order by order_item;
+
+
+select  order_item, 
+ decode( reg_name, '릴리' ,1)   ,
+ decode( reg_name, '봄' ,  1)   ,
+ decode( reg_name, '테스' ,1)   ,
+ decode( reg_name, '무드' ,1)   ,
+ decode( reg_name, '마샤' ,1)   
+from STARBUCKS_ORDER;
+ 
+ 
+ 
+ 
+
+

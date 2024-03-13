@@ -1,0 +1,21 @@
+1710119765961	Move folder
+1710119772269	Move '도서관관리' to 'webapp'
+1710119781314	Move folder
+1710124430594	Delete element
+1710124938498	Rename resource 'BookReg'
+1710126645742	Delete element
+1710126667288	Rename resource 'BookREg.jsp'
+1710126670688	Rename resource 'BookRg.jsp'
+1710133575186	Move 'BookReg.jsp' to '도서관관리'
+1710133577253	Move 'rAction.jsp' to '도서관관리'
+1710133580082	Move 'MemReg.jsp' to '도서관관리'
+1710133594247	Move '도서관등록' to '도서관관리'
+1710133602584	Move 3 resources to '도서관등록'
+1710133611683	Rename resource '도서관등록'
+1710133653333	Move 'View.jsp' to '조회'
+1710134495470	Delete element
+1710134501651	Move 3 resources to '도서관관리'
+1710134507249	Delete elements
+1710134508713	Move 'View.jsp' to '도서관관리'
+1710203498339	Rename resource 'rAction.jsp'
+1710294541835	Copy file
