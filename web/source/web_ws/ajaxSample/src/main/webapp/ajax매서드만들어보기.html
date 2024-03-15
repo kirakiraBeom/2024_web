@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+	
+	function myAjax( obj ){
+		
+		 let type  =  obj.type;
+		 let dateType = obj.dataType;
+		 let  url  = obj.url;
+		 let food="볶음밥입니다";
+		 
+		 //실제서버와의 통신을 수행함
+		 let  result= true;
+		 if( result ) {
+		        obj.success(food);
+		 }
+		 else{
+		        obj.error();
+		 } 
+	}	
+	
+	
+	function send(){	
+		
+			myAjax(
+					{
+					  	type: "get",
+						dataType: "text" ,
+						url: "food0"  ,			
+						success: function( data){
+							  alert(data);			 				
+						},
+						error: function( err ){		
+							 //
+							 alert("요청에 실패했습니다");
+						}				 
+			    }	 
+			 );	 
+	}
+</script>
+
+</head>
+<body>
+	
+	<button onclick="send()">음식정보</button>
+	
+	 
+
+</body>
+</html>
